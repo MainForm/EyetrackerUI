@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Navigation_Drawer</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\tgBtn_default.png" />
+    <None Remove="closeBtn_default.png" />
+    <None Remove="closeBtn_MouseOver.png" />
+    <None Remove="img_contact.png" />
+    <None Remove="img_home.png" />
+    <None Remove="img_message.png" />
+    <None Remove="tgBtn_default.png" />
+    <None Remove="tgBtn_MouseOver.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\tgBtn_default.png" />
+    <Resource Include="closeBtn_default.png" />
+    <Resource Include="closeBtn_MouseOver.png" />
+    <Resource Include="img_contact.png" />
+    <Resource Include="img_home.png" />
+    <Resource Include="img_message.png" />
+    <Resource Include="tgBtn_default.png" />
+    <Resource Include="tgBtn_MouseOver.png" />
+  </ItemGroup>
+
+</Project>
