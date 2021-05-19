@@ -52,7 +52,12 @@ namespace Navigation_Drawer
 
         }
 
-        private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void nav_pnl_MouseLeave(object sender, MouseEventArgs e)
         {
             Tg_Btn.IsChecked = false;
         }

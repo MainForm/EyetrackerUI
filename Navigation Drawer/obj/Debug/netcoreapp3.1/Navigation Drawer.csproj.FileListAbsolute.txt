@@ -16,3 +16,6 @@ C:\Users\user\source\repos\WPF\UI\Navigation Drawer\Navigation Drawer\obj\Debug\
 C:\Users\user\source\repos\WPF\UI\Navigation Drawer\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.dll
 C:\Users\user\source\repos\WPF\UI\Navigation Drawer\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.pdb
 C:\Users\user\source\repos\WPF\UI\Navigation Drawer\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.genruntimeconfig.cache
+C:\Users\user\source\repos\WPF\UI\Navigation Drawer\Navigation Drawer\obj\Debug\netcoreapp3.1\Analysis.g.cs
+C:\Users\user\source\repos\WPF\UI\Navigation Drawer\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer_MarkupCompile.lref
+C:\Users\user\source\repos\WPF\UI\Navigation Drawer\Navigation Drawer\obj\Debug\netcoreapp3.1\Analysis.baml

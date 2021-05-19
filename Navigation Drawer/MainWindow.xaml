@@ -115,16 +115,18 @@
         <!-- // Background color // -->
 
         <Grid Background="Black">
-            <Grid x:Name="BG" PreviewMouseLeftButtonDown="BG_PreviewMouseLeftButtonDown"
+            <Grid x:Name="BG"
                   Margin="65,0,0,0">
-                
+                <Frame NavigationUIVisibility="Hidden" Source="Analysis.xaml">
+                    
+                </Frame>
             </Grid>
             <!--// Navigation Pane//-->
 
             <Grid x:Name="nav_pnl"
                   HorizontalAlignment="Left"
                   Width="65"
-                  Background="#2E333A">
+                  Background="#2E333A" MouseLeave="nav_pnl_MouseLeave">
 
                 <StackPanel x:Name="st_pnl">
                     <!--//Grid for the Menu Toggle Button//-->
@@ -311,7 +313,7 @@
                             Margin="0"
                             HorizontalAlignment="Left"
                             BorderThickness="0"
-                            Style="{StaticResource style_btn_close}">
+                            Style="{StaticResource style_btn_close}" Click="CloseBtn_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="/closeBtn_default.png"/>
                         </Button.Background>
