@@ -8,7 +8,52 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Analysis">
 
-    <Grid>
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="This is Analysis Page!" FontSize="24" Foreground="White"> </TextBlock>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Border BorderBrush="White" Background="Black" BorderThickness="1">
+                <TextBlock Text="환자 화면" Foreground="White"
+                           Margin="10,10"
+                           FontSize="22"
+                           />
+            </Border>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="2.5*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Row="0" Grid.ColumnSpan="2" Background="Black">
+                    <Image x:Name="img_Face" Stretch="Fill"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0" Background="Red">
+                    <Image x:Name="img_LeftEye" Stretch="Fill"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1" Background="Red">
+                    <Image x:Name="img_RightEye" Stretch="Fill"/>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button x:Name="Start" Content="시작" Margin="5"/>
+                <GroupBox Grid.Row="1" Header="Context" FontSize="16" Margin="10,0,10,10">
+                </GroupBox>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

@@ -31,8 +31,8 @@
             <Setter Property="FontSize"
                     Value="20"/>
         </Style>
-            
-       <!--// ToolTip Style Template//-->
+
+        <!--// ToolTip Style Template//-->
         <Style TargetType="ToolTip" x:Key="tt_style">
             <Setter Property="Placement" Value="Right"/>
             <Setter Property="Height" Value="40"/>
@@ -48,7 +48,7 @@
             <Setter Property="HasDropShadow" Value="True"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
-        
+
         <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -77,7 +77,7 @@
                                         TargetName="border"
                                         Value="{StaticResource tb_mouse_over}"/>
                             </Trigger>
-                            
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -92,7 +92,7 @@
                                 BorderThickness="0"
                                 Background="{TemplateBinding Background}"
                                 SnapsToDevicePixels="True">
-                            
+
                         </Border>
 
                         <ControlTemplate.Triggers>
@@ -110,22 +110,23 @@
             </Setter>
         </Style>
     </Window.Resources>
-    
+
     <Grid>
         <!-- // Background color // -->
 
         <Grid Background="Black">
             <Grid x:Name="BG"
                   Margin="65,0,0,0">
-                <Frame NavigationUIVisibility="Hidden" Source="Analysis.xaml">
-                    
+                <Frame x:Name="MainFrame"
+                       NavigationUIVisibility="Hidden" Source="Analysis.xaml">
+
                 </Frame>
             </Grid>
             <!--// Navigation Pane//-->
 
             <Grid x:Name="nav_pnl"
                   HorizontalAlignment="Left"
-                  Width="65"
+                  Width="171"
                   Background="#2E333A" MouseLeave="nav_pnl_MouseLeave">
 
                 <StackPanel x:Name="st_pnl">
@@ -164,9 +165,9 @@
                             <!--//Toggle button default background Image//-->
                             <ToggleButton.Background>
                                 <ImageBrush Stretch="None" ImageSource="/tgBtn_default.png"/>
-                                
+
                             </ToggleButton.Background>
-                            
+
                             <!--//Togle Button - Checked, Unchecked events//-->
                             <ToggleButton.Triggers>
                                 <EventTrigger RoutedEvent="ToggleButton.Unchecked">
@@ -178,7 +179,7 @@
                                                 BeginTime="0:0:0"
                                                 From="230" To="65"
                                                 Duration="0:0:0.2">
-                                                
+
                                             </DoubleAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
@@ -192,7 +193,7 @@
                                                 BeginTime="0:0:0"
                                                 From="65" To="230"
                                                 Duration="0:0:0.2">
-                                                
+
                                             </DoubleAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
@@ -200,53 +201,73 @@
                             </ToggleButton.Triggers>
                         </ToggleButton>
                     </Grid>
-                    
+
                     <!--// ListView with new List item//-->
                     <ListView x:Name="LV"
                               Background="Transparent"
                               BorderBrush="Transparent"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                        
-                        <!--// Home //-->
+
+                        <!--// Analysis //-->
                         <ListViewItem HorizontalAlignment="Left"
                                       Margin="0,0,0,15"
-                                      MouseEnter="ListViewItem_MouseEnter">
+                                      MouseEnter="ListViewItem_MouseEnter" Selected="Analysis_Selected">
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
                                 <Image Stretch="None"
-                                       Margin="12,0,0,0" Source="/img_home.png"/>
-                                <TextBlock Text="Home"
+                                       Margin="12,0,0,0" Source="/icons8-eye-30.png"/>
+                                <TextBlock Text="Analysis"
                                            Margin="25,0,0,0"
                                            Style="{StaticResource font_style}"/>
                             </StackPanel>
                             <!--//Tool Tip//-->
                             <ListViewItem.ToolTip>
-                                <ToolTip x:Name="tt_home"
-                                         Content="Home"
+                                <ToolTip x:Name="tt_analysis"
+                                         Content="Analysis"
                                          Style="{StaticResource tt_style}"/>
                             </ListViewItem.ToolTip>
                         </ListViewItem>
-                        
-                        <!--// Contacts //-->
+
+                        <!--// Replay //-->
                         <ListViewItem HorizontalAlignment="Left"
                                       Margin="0,0,0,15"
-                                      MouseEnter="ListViewItem_MouseEnter">
+                                      MouseEnter="ListViewItem_MouseEnter" Selected="Replay_Selected">
                             <StackPanel Orientation="Horizontal"
                                         Width="230">
                                 <Image Stretch="None"
-                                       Margin="12,0,0,0" Source="/img_contact.png"/>
-                                <TextBlock Text="Contact"
+                                       Margin="12,0,0,0" Source="/icons8-play-30.png"/>
+                                <TextBlock Text="Replay"
                                            Margin="25,0,0,0"
                                            Style="{StaticResource font_style}"/>
                             </StackPanel>
                             <!--//Tool Tip//-->
                             <ListViewItem.ToolTip>
-                                <ToolTip x:Name="tt_contact"
-                                         Content="Contact"
+                                <ToolTip x:Name="tt_replay"
+                                         Content="Replay"
+                                         Style="{StaticResource tt_style}"/>
+                            </ListViewItem.ToolTip>
+                        </ListViewItem>
+                        <!--// setting //-->
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0,0,0,15"
+                                      MouseEnter="ListViewItem_MouseEnter" Selected="Replay_Selected">
+                            <StackPanel Orientation="Horizontal"
+                                        Width="230">
+                                <Image Stretch="None"
+                                       Margin="12,0,0,0" Source="/icons8-store-setting-30.png"/>
+                                <TextBlock Text="Setting"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+                            </StackPanel>
+                            <!--//Tool Tip//-->
+                            <ListViewItem.ToolTip>
+                                <ToolTip x:Name="tt_setting"
+                                         Content="Setting"
                                          Style="{StaticResource tt_style}"/>
                             </ListViewItem.ToolTip>
                         </ListViewItem>
                         <!--//Message //-->
+                        <!--
                         <ListViewItem HorizontalAlignment="Left"
                                       Margin="0,0,0,15"
                                       MouseEnter="ListViewItem_MouseEnter">
@@ -258,13 +279,15 @@
                                            Margin="25,0,0,0"
                                            Style="{StaticResource font_style}"/>
                             </StackPanel>
-                            <!--//Tool Tip//-->
+                            -->
+                        <!--//Tool Tip//-->
+                        <!--
                             <ListViewItem.ToolTip>
                                 <ToolTip x:Name="tt_message"
                                          Content="Message"
                                          Style="{StaticResource tt_style}"/>
                             </ListViewItem.ToolTip>
-                        </ListViewItem>
+                        </ListViewItem>-->
                         <!--//ListView Items style tempate//-->
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
@@ -339,7 +362,7 @@
                     </TextBlock>
                 </Grid>
             </Grid>
-            
+
         </Grid>
     </Grid>
 </Window>

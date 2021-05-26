@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Diagnostics;
+
 namespace Navigation_Drawer
 {
     /// <summary>
@@ -30,15 +32,15 @@ namespace Navigation_Drawer
             // Set tooltip visibility
             if(Tg_Btn.IsChecked == true)
             {
-                tt_home.Visibility = Visibility.Collapsed;
-                tt_contact.Visibility = Visibility.Collapsed;
-                tt_message.Visibility = Visibility.Collapsed;
+                tt_analysis.Visibility = Visibility.Collapsed;
+                tt_replay.Visibility = Visibility.Collapsed;
+                tt_setting.Visibility = Visibility.Collapsed;
             }
             else
             {
-                tt_home.Visibility = Visibility.Visible;
-                tt_contact.Visibility = Visibility.Visible;
-                tt_message.Visibility = Visibility.Visible;
+                tt_analysis.Visibility = Visibility.Visible;
+                tt_replay.Visibility = Visibility.Visible;
+                tt_setting.Visibility = Visibility.Visible;
             }
         }
 
@@ -60,6 +62,21 @@ namespace Navigation_Drawer
         private void nav_pnl_MouseLeave(object sender, MouseEventArgs e)
         {
             Tg_Btn.IsChecked = false;
+        }
+
+        private void Analysis_Selected(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.Content.GetType().Name == "Anlaysis")
+                return;
+
+            MainFrame.Navigate(new Analysis());
+        }
+
+        private void Replay_Selected(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.Content.GetType().Name == "Replay")
+                return;
+            MainFrame.Navigate(new Replay());
         }
     }
 }
