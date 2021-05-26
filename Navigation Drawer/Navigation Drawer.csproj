@@ -35,4 +35,14 @@
     <Resource Include="tgBtn_MouseOver.png" />
   </ItemGroup>
 
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.WindowsDesktop.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="OpenCvSharp4" Version="4.5.2.20210404" />
+	  <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.5.2.20210404" />
+	  <PackageReference Include="OpenCvSharp4.Windows" Version="4.5.2.20210404" />
+	</ItemGroup>
+
 </Project>

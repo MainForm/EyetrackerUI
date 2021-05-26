@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using System.Diagnostics;
+using System.Windows.Forms;
+using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 
 namespace Navigation_Drawer
 {
@@ -22,9 +24,27 @@ namespace Navigation_Drawer
     /// </summary>
     public partial class MainWindow : Window
     {
+        public SecondWindow win_second;
         public MainWindow()
         {
             InitializeComponent();
+
+
+            //win_second = new SecondWindow();
+
+            //Screen second = Screen.AllScreens[1];
+
+            //win_second.Top = second.WorkingArea.Top;
+            //win_second.Left = second.WorkingArea.Left;
+            //win_second.Height = second.WorkingArea.Height;
+            //win_second.Width = second.WorkingArea.Width;
+            //win_second.Show();
+
+            //if (win_second.IsLoaded)
+            //    win_second.WindowState = WindowState.Maximized;
+
+
+            Tg_Btn.IsChecked = false;
         }
 
         private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
@@ -77,6 +97,11 @@ namespace Navigation_Drawer
             if (MainFrame.Content.GetType().Name == "Replay")
                 return;
             MainFrame.Navigate(new Replay());
+        }
+
+        private void Window_Unloaded(object sender, RoutedEventArgs e)
+        {
+            win_second.Close();
         }
     }
 }

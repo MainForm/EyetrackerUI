@@ -9,7 +9,7 @@
         Topmost="True"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized" Unloaded="Window_Unloaded">
 
     <Window.Resources>
         <!--//Togle Button Style Template //-->
@@ -126,7 +126,7 @@
 
             <Grid x:Name="nav_pnl"
                   HorizontalAlignment="Left"
-                  Width="171"
+                  Width="65"
                   Background="#2E333A" MouseLeave="nav_pnl_MouseLeave">
 
                 <StackPanel x:Name="st_pnl">
