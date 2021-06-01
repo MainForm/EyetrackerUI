@@ -30,18 +30,20 @@ namespace Navigation_Drawer
             InitializeComponent();
 
 
-            //win_second = new SecondWindow();
+            win_second = new SecondWindow();
 
-            //Screen second = Screen.AllScreens[1];
+            win_second.Visibility = Visibility.Hidden;
 
-            //win_second.Top = second.WorkingArea.Top;
-            //win_second.Left = second.WorkingArea.Left;
-            //win_second.Height = second.WorkingArea.Height;
-            //win_second.Width = second.WorkingArea.Width;
-            //win_second.Show();
+            Screen second = Screen.AllScreens[1];
 
-            //if (win_second.IsLoaded)
-            //    win_second.WindowState = WindowState.Maximized;
+            win_second.Top = second.WorkingArea.Top;
+            win_second.Left = second.WorkingArea.Left;
+            win_second.Height = second.WorkingArea.Height;
+            win_second.Width = second.WorkingArea.Width;
+            win_second.Show();
+
+            if (win_second.IsLoaded)
+                win_second.WindowState = WindowState.Maximized;
 
 
             Tg_Btn.IsChecked = false;

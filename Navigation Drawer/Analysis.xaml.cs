@@ -172,6 +172,7 @@ namespace Navigation_Drawer
                     if (cap.Read(frame))
                     {
                         win_second.img_video.Source = BitmapSourceConverter.ToBitmapSource(frame);
+                        //img_SecondScreen.Source = win_second.img_video.Source;
                         img_SecondScreen.Source = GetScreenSource(secondScreen);
                         Cv2.WaitKey(10);
                     }

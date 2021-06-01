@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zer01\\Desktop\\UI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj": {}
+    "C:\\Users\\bkgr4\\Desktop\\EyeTrakcingUI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zer01\\Desktop\\UI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj": {
+    "C:\\Users\\bkgr4\\Desktop\\EyeTrakcingUI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zer01\\Desktop\\UI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj",
+        "projectUniqueName": "C:\\Users\\bkgr4\\Desktop\\EyeTrakcingUI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj",
         "projectName": "Navigation Drawer",
-        "projectPath": "C:\\Users\\zer01\\Desktop\\UI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj",
-        "packagesPath": "C:\\Users\\zer01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zer01\\Desktop\\UI\\EyetrackerUI\\Navigation Drawer\\obj\\",
+        "projectPath": "C:\\Users\\bkgr4\\Desktop\\EyeTrakcingUI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj",
+        "packagesPath": "C:\\Users\\bkgr4\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bkgr4\\Desktop\\EyeTrakcingUI\\EyetrackerUI\\Navigation Drawer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\zer01\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\bkgr4\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

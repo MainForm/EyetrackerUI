@@ -33,15 +33,15 @@ namespace Navigation_Drawer
         Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         public event EventHandler ReceivedFrame;
         Thread td_RecvingFrame;
-
-        public bool isConnected 
-        {
-            get { return client.Connected; }
-        }
+        Semaphore sem_recv = new Semaphore(1,1);
 
         public CameraClient()
         {
 
+        }
+        public bool isConnected 
+        {
+            get { return client.Connected; }
         }
 
         public void Connect(string IP,int port)
@@ -49,31 +49,41 @@ namespace Navigation_Drawer
             client.Connect(new IPEndPoint(IPAddress.Parse(IP),port));
         }
 
+
         public void GetFrame()
         {
+            //if (td_RecvingFrame != null && td_RecvingFrame.IsAlive)
+            //    return;
+            //td_RecvingFrame = new Thread(RecvData);
+            //td_RecvingFrame.IsBackground = true;
+            //td_RecvingFrame.Start();
 
-            if (td_RecvingFrame != null && td_RecvingFrame.IsAlive)
-                return;
-
-            td_RecvingFrame = new Thread(()=> {
-                try
-                {
-                    SendString(client, "frame");
-                    if (ReceivedFrame != null)
-                        ReceivedFrame(this, new FrameCallbackArg(RecvImage(client)));
-                }
-                catch(Exception err)
-                {
-                    Trace.WriteLine(err.Message);
-                }
-            });
-            td_RecvingFrame.IsBackground = true;
-            td_RecvingFrame.Start();
+            SendCommand("frame");
         }
+
+ 
 
         public void Close() {
             if (this.client.Connected)
                 this.client.Close();
+        }
+
+        private void SendCommand(string cmd)
+        {
+            try
+            {
+                sem_recv.WaitOne();
+
+                SendString(client, cmd);
+                if (ReceivedFrame != null)
+                    ReceivedFrame(this, new FrameCallbackArg(RecvImage(client)));
+
+                sem_recv.Release();
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+            }
         }
 
         private void SendInt(Socket sock, int number)
