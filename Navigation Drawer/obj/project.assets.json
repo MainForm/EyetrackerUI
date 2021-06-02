@@ -355,19 +355,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bkgr4\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bkgr4\\Desktop\\EyeTrakcingUI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\eyetracking\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj",
       "projectName": "Navigation Drawer",
-      "projectPath": "C:\\Users\\bkgr4\\Desktop\\EyeTrakcingUI\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj",
-      "packagesPath": "C:\\Users\\bkgr4\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bkgr4\\Desktop\\EyeTrakcingUI\\EyetrackerUI\\Navigation Drawer\\obj\\",
+      "projectPath": "C:\\Users\\user\\Desktop\\eyetracking\\EyetrackerUI\\Navigation Drawer\\Navigation Drawer.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\eyetracking\\EyetrackerUI\\Navigation Drawer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bkgr4\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -427,7 +427,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

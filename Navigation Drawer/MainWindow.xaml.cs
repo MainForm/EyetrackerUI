@@ -32,9 +32,9 @@ namespace Navigation_Drawer
 
             win_second = new SecondWindow();
 
-            win_second.Visibility = Visibility.Hidden;
+            //win_second.Visibility = Visibility.Hidden;
 
-            Screen second = Screen.AllScreens[1];
+            Screen second = Screen.AllScreens[0];
 
             win_second.Top = second.WorkingArea.Top;
             win_second.Left = second.WorkingArea.Left;

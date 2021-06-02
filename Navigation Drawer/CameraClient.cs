@@ -28,16 +28,31 @@ namespace Navigation_Drawer
         }
     }
 
+    class EyePointCallbackArg : EventArgs
+    {
+        public int x, y;
+
+        public EyePointCallbackArg(int x,int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
     class CameraClient
     {
         Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         public event EventHandler ReceivedFrame;
-        Thread td_RecvingFrame;
+        public event EventHandler FinishedCalibration;
+        public event EventHandler RecvivedEyePoint;
+        Thread td_recvData;
         Semaphore sem_recv = new Semaphore(1,1);
+        public OpenCvSharp.Point ptEye;
 
         public CameraClient()
         {
-
+            ptEye.X = -1;
+            ptEye.Y = -1;
         }
         public bool isConnected 
         {
@@ -47,6 +62,9 @@ namespace Navigation_Drawer
         public void Connect(string IP,int port)
         {
             client.Connect(new IPEndPoint(IPAddress.Parse(IP),port));
+            td_recvData = new Thread(ThredFunc_recvData);
+            td_recvData.IsBackground = true;
+            td_recvData.Start();
         }
 
 
@@ -70,22 +88,52 @@ namespace Navigation_Drawer
 
         private void SendCommand(string cmd)
         {
+            SendString(client, cmd);
+        }
+
+        public bool bCal
+        {
+            set;get;
+        }
+
+        void ThredFunc_recvData()
+        {
             try
             {
-                sem_recv.WaitOne();
+                while (client.Connected)
+                {
+                    string cmd = RecvString(client);
+                    if (cmd == null)
+                        break;
 
-                SendString(client, cmd);
-                if (ReceivedFrame != null)
-                    ReceivedFrame(this, new FrameCallbackArg(RecvImage(client)));
+                    sem_recv.WaitOne();
+                    if (cmd == "frame")
+                    {
+                        if (ReceivedFrame != null)
+                            ReceivedFrame(this, new FrameCallbackArg(RecvImage(client)));
+                    }
+                    else if(cmd == "Calibration")
+                    {
+                        int data = RecvInt(client);
+                        bCal = (data == 1);
 
-                sem_recv.Release();
+                        if(FinishedCalibration != null)
+                            FinishedCalibration(this, null);
+                    }
+                    else if(cmd == "EyePoint")
+                    {
+                        this.ptEye.X = RecvInt(client);
+                        this.ptEye.Y = RecvInt(client);
+                    }
+
+                    sem_recv.Release();
+                }
             }
             catch (Exception err)
             {
                 Trace.WriteLine(err.Message);
             }
         }
-
         private void SendInt(Socket sock, int number)
         {
             sock.Send(UTF8Encoding.UTF8.GetBytes(number.ToString() + '\0'));
@@ -93,7 +141,14 @@ namespace Navigation_Drawer
 
         private int RecvInt(Socket sock)
         {
-            return int.Parse(RecvString(sock));
+            try
+            {
+                return int.Parse(RecvString(sock));
+            }
+            catch(FormatException err)
+            {
+                return 0;
+            }
         }
 
         private String RecvString(Socket sock)

@@ -43,6 +43,10 @@ namespace Navigation_Drawer
         CameraClient cap_LeftEye = new CameraClient();
         CameraClient cap_RightEye = new CameraClient();
 
+        bool bCal = false;
+        Mat second_frame;
+        VideoCapture cap;
+
         Thread td_recvFrame;
         public Analysis()
         {
@@ -100,11 +104,50 @@ namespace Navigation_Drawer
                 }));
             };
 
+            cap_LeftEye.FinishedCalibration += CheckCalibration;
+            cap_RightEye.FinishedCalibration += CheckCalibration;
+
+            cap_LeftEye.RecvivedEyePoint += (object obj, EventArgs arg) =>
+            {
+                Dispatcher.Invoke((Action)(() =>
+                {
+                    if (arg is EyePointCallbackArg)
+                    {
+                        EyePointCallbackArg arg_point = (arg as EyePointCallbackArg);
+                        if (second_frame != null && second_frame.Empty() == false)
+                            Cv2.Circle(second_frame,new OpenCvSharp.Point(arg_point.x, arg_point.y), 5,new Scalar(0, 0, 255),-1);
+                    }
+                }));
+            };
+
+            cap_RightEye.RecvivedEyePoint += (object obj, EventArgs arg) =>
+            {
+                Dispatcher.Invoke((Action)(() =>
+                {
+                    if (arg is EyePointCallbackArg)
+                    {
+                        EyePointCallbackArg arg_point = (arg as EyePointCallbackArg);
+                        if (second_frame != null && second_frame.Empty() == false)
+                            Cv2.Circle(second_frame, new OpenCvSharp.Point(arg_point.x, arg_point.y), 5, new Scalar(255, 0, 0),-1);
+                    }
+                }));
+            };
 
             td_recvFrame = new Thread(ThreadFunc_RecvFrame);
             td_recvFrame.IsBackground = true;
             td_recvFrame.Start();
         }
+
+        private void CheckCalibration(object obj, EventArgs arg)
+        {
+            if (bCal && cap_LeftEye.bCal == true && cap_RightEye.bCal == true)
+            {
+                cap.Read(second_frame);
+                cap_RightEye.bCal = false;
+                cap_LeftEye.bCal = false;
+            }
+        }
+
         private void ThreadFunc_RecvFrame()
         {
             try
@@ -127,11 +170,15 @@ namespace Navigation_Drawer
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-
             if (th_Analysis != null && th_Analysis.IsAlive)
             {
                 return;
             }
+
+            bCal = true;
+            cap = new VideoCapture("Calibration.avi");
+            second_frame = new Mat();
+            cap.Read(second_frame);
 
             this.th_Analysis = new Thread(ThreadFunc_Analysis);
             th_Analysis.IsBackground = true;
@@ -151,35 +198,33 @@ namespace Navigation_Drawer
             return btMain.ToBitmapSource();
         }
 
-        VideoCapture cap;
         private void ThreadFunc_Analysis()
         {
             Dispatcher.Invoke((Action)(() =>
             {
-                cap = new VideoCapture("Calibration.mp4");
-
                 MainWindow win_main = (Window.GetWindow(this) as MainWindow);
 
                 if (win_main is null)
                     return;
 
                 SecondWindow win_second = win_main.win_second;
-                Screen secondScreen = Screen.AllScreens[1];
+                Screen secondScreen = Screen.AllScreens[0];
 
                 while (cap.IsOpened())
                 {
-                    Mat frame = new Mat();
-                    if (cap.Read(frame))
-                    {
-                        win_second.img_video.Source = BitmapSourceConverter.ToBitmapSource(frame);
-                        //img_SecondScreen.Source = win_second.img_video.Source;
-                        img_SecondScreen.Source = GetScreenSource(secondScreen);
-                        Cv2.WaitKey(10);
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    Mat temp = second_frame.Clone();
+
+                    if (cap_LeftEye.ptEye.X != -1)
+                        Cv2.Circle(temp, cap_LeftEye.ptEye, 10, new Scalar(0, 0, 255), -1);
+
+                    if (cap_RightEye.ptEye.X != -1)
+                        Cv2.Circle(temp, cap_RightEye.ptEye, 10, new Scalar(255, 0, 0), -1);
+
+                    win_second.img_video.Source = BitmapSourceConverter.ToBitmapSource(temp);
+                    img_SecondScreen.Source = win_second.img_video.Source;
+
+                    //img_SecondScreen.Source = GetScreenSource(secondScreen);
+                    Cv2.WaitKey(30);
                 }
 
                 win_second.img_video.Source = null;

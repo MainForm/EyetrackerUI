@@ -9,7 +9,70 @@
       Title="Replay">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Text="This is Replay page."
-                   Foreground="White" FontSize="20"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Border BorderBrush="#777777" Background="Black" BorderThickness="2" CornerRadius="10" Margin="5">
+                <Image x:Name="img_SecondScreen" Stretch="Fill"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Border BorderBrush="#777777" Background="Black" BorderThickness="2" CornerRadius="10" Margin="10,5,10,0">
+                    <Button BorderThickness="0" Background="Transparent">
+                        <TextBox x:Name="tb_StartButtonText" FontSize="22" Foreground="White" BorderBrush="Transparent"
+                                 Text="시작" Background="Transparent" />
+                    </Button>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border CornerRadius="10">
+                    <GroupBox Header="context" FontSize="20" Margin="10" BorderThickness="0.5" BorderBrush="#777777" Foreground="#999999" Background="#222222">
+
+                    </GroupBox>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.8*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Border BorderBrush="#777777" BorderThickness="2" Background="#111111" Margin="10, 0, 10, 5" CornerRadius="10">
+                        <Image x:Name="img_Face" Stretch="Fill"/>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid>
+                        <Border BorderBrush="#777777" BorderThickness="1" Background="#222222" CornerRadius="10" Margin="10, 5, 5, 10">
+                            <Image x:Name="img_LeftEye" Stretch="Fill"/>
+                        </Border>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <Border BorderBrush="#777777" BorderThickness="1" Background="#222222" CornerRadius="10" Margin="5, 5, 10, 10">
+                            <Image x:Name="img_RightEye" Stretch="Fill"/>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

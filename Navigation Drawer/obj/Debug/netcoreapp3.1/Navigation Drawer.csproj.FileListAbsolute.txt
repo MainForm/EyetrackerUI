@@ -99,3 +99,42 @@ C:\Users\bkgr4\Desktop\EyeTrakcingUI\EyetrackerUI\Navigation Drawer\obj\Debug\ne
 C:\Users\bkgr4\Desktop\EyeTrakcingUI\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.dll
 C:\Users\bkgr4\Desktop\EyeTrakcingUI\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.pdb
 C:\Users\bkgr4\Desktop\EyeTrakcingUI\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.genruntimeconfig.cache
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\Navigation Drawer.exe
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\Navigation Drawer.deps.json
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\Navigation Drawer.runtimeconfig.json
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\Navigation Drawer.runtimeconfig.dev.json
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\Navigation Drawer.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\Navigation Drawer.pdb
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\OpenCvSharp.Extensions.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\OpenCvSharp.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\OpenCvSharp.WpfExtensions.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\opencv_videoio_ffmpeg452_64.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\OpenCvSharpExtern.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\opencv_videoio_ffmpeg452.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.csprojAssemblyReference.cache
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Analysis.g.cs
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Replay.g.cs
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\SecondWindow.g.cs
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer_MarkupCompile.cache
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer_MarkupCompile.lref
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Analysis.baml
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Replay.baml
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\SecondWindow.baml
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.g.resources
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.AssemblyInfo.cs
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.csproj.CopyComplete
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.dll
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.pdb
+C:\Users\user\Desktop\eyetracking\EyetrackerUI\Navigation Drawer\obj\Debug\netcoreapp3.1\Navigation Drawer.genruntimeconfig.cache
